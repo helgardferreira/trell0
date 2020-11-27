@@ -1,3 +1,11 @@
+N.B. in order to run this exercise locally you need to do the following:
+- Create a .env file in the web-server's root folder and add the following credentials:
+```.env
+API_KEY=<TRELLO API KEY>
+API_TOKEN=<TRELLO USER TOKEN>
+```
+- If using your own **API_KEY** & **API_TOKEN** values then make sure to modify the end rest end points in board.reducer.ts and card-list.reducer.ts to point to your own trello board ID.
+
 <h1 align="center">Build Develop & Deploy Instructions</h1>
 <!-- NestJS -->
 <p align="center">
