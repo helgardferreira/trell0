@@ -44,12 +44,19 @@ export const loadCardLists = (): ThunkAction<
   try {
     const cardLists: CardListModel[] = await fetch(
       "http://localhost:4000/boards/5fb6629327dbe95c234fed3d/cards-lists"
-    ).then((res) => res.json());
+    )
+      .then((res) => {
+        if (res.status !== 200) throw new Error(res.statusText);
+        return res;
+      })
+      .then((res) => res.json());
 
     dispatch(setCardLists(cardLists));
   } catch (er) {
+    alert(
+      `Cannot contact backend!\n${er}\nHave you configured the server's .env with the appropriate credentials?`
+    );
     console.error(er);
-    alert("Cannot contact backend!");
   }
 };
 
@@ -70,11 +77,18 @@ export const postNewCard = (
         name,
         idList,
       }),
-    }).then((res) => res.json());
+    })
+      .then((res) => {
+        if (res.status !== 200) throw new Error(res.statusText);
+        return res;
+      })
+      .then((res) => res.json());
 
     dispatch(addCard(card));
   } catch (er) {
+    alert(
+      `Cannot contact backend!\n${er}\nHave you configured the server's .env with the appropriate credentials?`
+    );
     console.error(er);
-    alert("Cannot contact backend!");
   }
 };

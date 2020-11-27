@@ -34,10 +34,18 @@ export const loadBoard = (): ThunkAction<
   try {
     const board: BoardModel = await fetch(
       "http://localhost:4000/boards/5fb6629327dbe95c234fed3d"
-    ).then((res) => res.json());
+    )
+      .then((res) => {
+        if (res.status !== 200) throw new Error(res.statusText);
+        return res;
+      })
+      .then((res) => res.json());
 
     dispatch(setBoard(board));
-  } catch {
-    alert("Cannot contact backend!");
+  } catch (er) {
+    alert(
+      `Cannot contact backend!\n${er}\nHave you configured the server's .env with the appropriate credentials?`
+    );
+    console.error(er);
   }
 };
