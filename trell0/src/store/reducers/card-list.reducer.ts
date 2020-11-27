@@ -8,7 +8,7 @@ import {
   SET_CARD_LISTS,
 } from "../actions/card-list.actions";
 import { ApplicationState } from "../model";
-import { CardListModel, CardModel } from "../model/list.interface";
+import { CardListModel, CardModel } from "../model/card-list.model";
 
 export const cardListsReducer: Reducer<CardListModel[], CardListsAction> = (
   state = [],

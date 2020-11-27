@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import styled from "styled-components";
-import { CardModel } from "../../store/model/list.interface";
+import { CardModel } from "../../store/model/card-list.model";
 
 const CardBackground = styled.div`
   background-color: white;

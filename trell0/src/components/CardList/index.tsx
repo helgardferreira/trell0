@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
 import { ApplicationState } from "../../store/model";
-import { CardListModel } from "../../store/model/list.interface";
+import { CardListModel } from "../../store/model/card-list.model";
 import { loadCardLists } from "../../store/reducers/card-list.reducer";
 import AddCard from "../AddCard";
 import Card from "../Card";

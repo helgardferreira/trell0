@@ -1,5 +1,5 @@
 import { BoardModel } from "./board.model";
-import { CardListModel } from "./list.interface";
+import { CardListModel } from "./card-list.model";
 
 export interface ApplicationState {
   board: BoardModel;

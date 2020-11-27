@@ -1,4 +1,4 @@
-import { CardListModel, CardModel } from "../model/list.interface";
+import { CardListModel, CardModel } from "../model/card-list.model";
 
 export const SET_CARD_LISTS = "SET_CARD_LISTS";
 export const ADD_CARD = "ADD_CARD";
